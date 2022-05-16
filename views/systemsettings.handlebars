@@ -1,0 +1,100 @@
+<link rel="stylesheet" type="text/css" href="/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="/public/css/jquery.dataTables.min.css">
+
+
+    <!-- Panel de Enfermedades -->
+    <div class="col-md-4 col-lg-4" style="padding-right: 30px; padding-left: 30px;">
+         <div class="row">
+            <!-- Agregar una nueva enfermedad -->
+            <h4 style="margin-top: 0px;">Agregar una enfermedad al sistema</h4>
+            <form action="/app/adddisease" method="post">
+                <div class="form-group row">
+                    <label class="col-sm-5 col-md-5 col-lg-5 col-form-label">Enfermedad</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="text" name="diseaseName" required="true" placeholder="nombre de la enfermedad">
+                    </div>
+                </div>
+
+                <!-- Puntaje de la Enfermedad -->
+                <div class="form-group row">
+                    <label class="col-sm-5 col-md-5 col-lg-5 col-form-label">Puntaje</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="number" name="diseaseScore" required="true" placeholder="puntaje de la enfermedad">
+                    </div>
+                </div>
+
+            	<input class="btn btn-success" style="float: right;" type="Submit" name="Submit" value="Añadir">
+            </form>
+        </div>
+
+        <hr style="border-top: dotted 1px;" />
+
+        <div class="row">
+        <!-- Eliminar enfermedades -->
+            <h4 style="margin-top: 0px;">Eliminar enfermedades del sistema</h4>
+            <form action="/app/deletediseases" method="post">
+                <table id="diseases-table" class="table table-striped table-bordered" cellspacing="0" width="100%"></table>
+
+                <input class="btn btn-danger" style="float: right;" type="Submit" name="Submit" value="Eliminar">
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Panel de habitaciones -->
+    <div class="col-md-4 col-lg-4" style="padding-right: 30px; padding-left: 30px;">
+        <!-- Agregar una habitacion -->
+        <div class="row">
+            <h4 style="margin-top: 0px;">Agregar una habitación al sistema</h4>
+            <form action="/app/addroom" method="post">
+                <div class="form-group row">
+                    <label class="col-sm-5 col-md-5 col-lg-5 col-form-label">Habitación</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input class="form-control" style="width: 100%;" type="text" name="roomName" required="true" placeholder="nombre de habitacion">
+                    </div>
+                </div>
+
+            	<input class="btn btn-success" style="float: right;" type="Submit" name="Submit" value="Añadir">
+            </form>
+        </div>
+
+        <hr style="border-top: dotted 1px;" />
+
+        <!-- Eliminar habitaciones -->
+        <div class="row">
+            <h4 style="margin-top: 0px;">Eliminar habitaciones del sistema</h4>
+            <form action="/app/deleterooms" method="post">
+                <table id="rooms-table" class="table table-striped table-bordered" cellspacing="0" width="100%"></table>
+
+                <input class="btn btn-danger" style="float: right;" type="Submit" name="Submit" value="Eliminar">
+            </form>
+        </div>
+    </div>
+
+   <!-- Agregar usuario -->
+   <div class="col-md-4 col-lg-4" style="padding-right: 30px; padding-left: 30px;">
+        <div class="row">
+             <h4 style="margin-top:0px">Agregar un nuevo usuario</h4>
+             <form method="post" action="/app/adduser" center="true">
+                 <div class="form-group row">
+                     <label class="col-sm-3 col-md-3 col-lg-3 col-form-label">Usuario</label>
+                     <div class="col-sm-9 col-md-9 col-lg-9">
+                          <input class="form-control" style="width: 100%;" type="text" name="username" required="true" placeholder="ingrese el usuario">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label class="col-sm-3 col-md-3 col-lg-3 col-form-label">Contraseña</label>
+                     <div class="col-sm-9 col-md-9 col-lg-9">
+                          <input class="form-control" style="width: 100%;" type="password" name="password" required="true" placeholder="ingrese la contraseña">
+                     </div>
+                 </div>
+                 <button type="submit" style="float: right;" class="btn btn-primary">Agregar</button>
+             </form>
+        </div>
+   </div>
+
+
+
+<script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="/scripts/systemSettings.js"></script>
